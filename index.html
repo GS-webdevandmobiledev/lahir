@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Selamat Datang ke Dunia, Baby! </title>
+        <link rel="stylesheet" href="style.css">
+        <!-- Google Fonts -->
+         <link href="https://fonts.goggleapis.com/css2?family=Poppins:wght@300;400;600&family=Sacramento&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <p class="welcome-text">Selamat Datang di Dunia</p>
+            <h1 class="baby-name">Baby</h1>
+            <p class="parents-name">Putra Pertama dari Zaini & Gita</p>
+            <a href="#biodata" class="btn">Lihat Detail</a>
+        </div>
+    </header>
+
+    <!-- BIODATA SECTION -->
+    <section id="biodata" class="biodata-section">
+        <h2 class="section-title">Detail Kelahiran</h2>
+        <div class="biodata-grid">
+            <div class="card">
+                <span class="icon">📅</span>
+                <h3>Tanggal</h3>
+                <p>12 September 2026</p>
+            </div>
+            <div class="card">
+                <span class="icon">⏰</span>
+                <h3>Waktu</h3>
+                <p>08.15 WIB</p>
+            </div>
+            <div class="card">
+                <span class="icon">⚖️</span>
+                <h3>Berat Badan</h3>
+                <p>3.2 kg</p>
+            </div>
+            <div class="card">
+                <span class="icon">📏</span>
+                <h3>Panjang Badan</h3>
+                <p>49 cm</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERI FOTO -->
+    <section class="gallery-section">
+        <h2 class="section-title">Momen Bahagia</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=500" alt="Foto Bayi 1"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?w=500" alt="Foto Bayi 2"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=500" alt="Foto Bayi 3"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=500" alt="Foto Bayi 4"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=500" alt="Foto Bayi 5"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=500" alt="Foto Bayi 6"></div>
+        </div>
+    </section>
+
+    <!-- UCAPAN DAN DOA -->
+    <section class="wishes-section">
+        <h2 class="section-title">Kirim Ucapan & Doa</h2>
+        <form class="wish-form" name="submit-to-google-sheet">
+            <input type="text" name="Nama" placeholder="Nama Anda" required>
+            <textarea name="Pesan" placeholder="Tuliskan doa terbaik Anda untuk si kecil..." rows="4" required></textarea>
+            <button type="submit" class="btn-submit">Kirim Ucapan</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Gita & Zaini</p>
+    </footer>
+    <script>
+  // Ganti teks di bawah dengan Link Web App URL yang kamu salin di Langkah 3
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbw_Kp_uPHA9KRT1l8vL9YQ_RLMD2jO03CiKMSMlT7WqUAqwXK6Xi983H9awf-fsnv7X/exec';
+  const form = document.forms['submit-to-google-sheet'];
+  const btnSubmit = document.querySelector('.btn-submit');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    
+    // Ubah status tombol saat mengirim
+    btnSubmit.disabled = true;
+    btnSubmit.innerText = 'Mengirim...';
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        alert('Terima kasih! Ucapan dan doa Anda telah tersimpan di Google Sheets. ❤️');
+        btnSubmit.disabled = false;
+        btnSubmit.innerText = 'Kirim Ucapan';
+        form.reset();
+      })
+      .catch(error => {
+        alert('Maaf, terjadi kesalahan saat mengirim ucapan.');
+        btnSubmit.disabled = false;
+        btnSubmit.innerText = 'Kirim Ucapan';
+        console.error('Error!', error.message);
+      });
+  });
+</script>
+    </body>
+</html>

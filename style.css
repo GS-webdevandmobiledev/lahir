@@ -1,0 +1,203 @@
+/* RESET & GENERAL STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #fcf8f6;
+    color: #4a4a4a;
+}
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=1200');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+}
+
+.welcome-text {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.baby-name {
+    font-family: 'Sacramento', cursive;
+    font-size: 4rem;
+    margin: 10px 0;
+    color: #ffd1dc; /* Soft Pink / Gold tint */
+}
+
+.parents-name {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #e8a598;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #d18a7d;
+}
+
+/* SECTION COMMON STYLES */
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #7b6d65;
+}
+
+/* BIODATA SECTION */
+.biodata-section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.biodata-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.card .icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 1rem;
+    color: #aaa;
+    margin-bottom: 5px;
+}
+
+.card p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #555;
+}
+
+/* GALLERY SECTION */
+.gallery-section {
+    padding: 60px 20px;
+    background-color: #f7ede8;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* WISHES SECTION */
+.wishes-section {
+    padding: 60px 20px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.wish-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.wish-form input, .wish-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+}
+
+.btn-submit {
+    padding: 12px;
+    background-color: #7b6d65;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-submit:hover {
+    background-color: #5f534c;
+}
+
+.wishes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.wish-card {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border-left: 5px solid #e8a598;
+}
+
+.wish-card h4 {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #7b6d65;
+    color: white;
+    font-size: 0.9rem;
+}
